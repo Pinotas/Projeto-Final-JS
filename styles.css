@@ -1,93 +1,91 @@
-/* Estilos para o título */
 h1 {
   font-family: "Arial", sans-serif;
   text-align: center;
-  color: #7296d8; /* Cor do texto mais suave */
-  margin-bottom: 30px; /* Mais espaço abaixo do título */
-  font-size: 3em; /* Tamanho maior para o título */
+  color: #7296d8;
+  margin-bottom: 30px;
+  font-size: 3em;
 }
 
-/* Estilos para o formulário de criação de post */
 div {
   margin-bottom: 20px;
 }
 
 div > label {
   display: block;
-  margin-top: 10px; /* Mais espaço acima dos rótulos */
+  margin-top: 10px;
   font-weight: bold;
-  color: #ffffff; /* Cor do texto mais suave */
+  color: #ffffff;
   font-size: 18px;
 }
 
 input[type="text"],
 textarea {
-  width: calc(100% - 30px); /* Largura do elemento com margens */
-  padding: 15px; /* Mais preenchimento interno */
-  margin-bottom: 20px; /* Mais espaço abaixo dos campos */
-  border-radius: 10px; /* Borda mais arredondada */
-  border: 1px solid #ccc; /* Cor da borda mais suave */
-  color: #333; /* Cor do texto */
-  display: block; /* Garante que os elementos fiquem em blocos separados */
+  width: calc(100% - 30px);
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  color: #333;
+  display: block;
 }
 
 button {
-  width: calc(100% - 30px); /* Largura do elemento com margens */
-  padding: 20px 40px; /* Mais preenchimento */
-  border-radius: 10px; /* Borda mais arredondada */
-  background-color: #7296d8; /* Cinza escuro */
+  width: calc(100% - 30px);
+  padding: 20px 40px;
+  border-radius: 10px;
+  background-color: #7296d8;
   color: #fff;
   transition: background-color 0.3s ease;
-  border: none; /* Sem borda */
-  display: block; /* Bloco separado */
-  margin-bottom: 20px; /* Espaço abaixo do botão */
+  border: none;
+  display: block;
+  margin-bottom: 20px;
 }
 
 button:hover {
-  background-color: #333; /* Cinza mais escuro no hover */
+  background-color: #333;
 }
 
-/* Estilos para a seção de posts antigos */
 h2 {
   font-family: "Arial", sans-serif;
-  color: #ffffff; /* Cor do texto mais suave */
-  margin-bottom: 20px; /* Mais espaço abaixo dos títulos */
+  color: #fffcfc;
+  margin-bottom: 20px;
 }
 
 #searchInput {
-  width: calc(100% - 30px); /* Largura do elemento com margens */
+  width: calc(100% - 30px);
   padding: 15px;
-  border-radius: 10px; /* Borda mais arredondada */
-  border: 1px solid #ccc; /* Cor da borda mais suave */
-  color: #333; /* Cor do texto */
-  margin-bottom: 40px; /* Mais espaço abaixo dos elementos */
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  color: #333;
+  margin-bottom: 40px;
 }
 ul {
   list-style-type: none;
   padding: 0;
 }
 
-/* Estilos para os itens da lista de posts */
 li {
-  background-color: #f5f5f5; /* Fundo mais claro */
-  padding: 20px; /* Mais preenchimento */
-  margin-bottom: 20px; /* Mais espaço abaixo dos itens */
-  border-radius: 10px; /* Borda mais arredondada */
-  border: 1px solid #ddd; /* Borda mais clara */
-  color: #333; /* Cor do texto */
+  background-color: #f5f5f5;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  color: #333;
 }
 
-/* Toque de design moderno */
 body {
-  background-color: #3d336b; /* Fundo mais claro */
+  background-color: #3d336b;
   display: flex;
-  flex-direction: column; /* Alinha os elementos verticalmente */
+  flex-direction: column;
   align-items: center;
-  height: 100vh; /* Altura total da tela */
-  padding-bottom: 40px; /* Espaço abaixo de todos os elementos */
-  width: 80%; /* Largura do contêiner */
+  height: 100vh;
+  padding-bottom: 40px;
+  width: 80%;
   max-width: 800px;
   margin: 0 auto;
-  padding: 20px; /* Espaçamento interno */
+  padding: 20px;
   border-radius: 10px #ffffff;
+}
+#postList h2 {
+  color: #333;
 }

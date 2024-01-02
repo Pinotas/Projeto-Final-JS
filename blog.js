@@ -80,28 +80,13 @@ function displayPostsDetails(postsData, usersData) {
 
 // Função para criar a barra de pesquisa de posts
 function criarBarraPesquisa() {
-  const searchBar = document.createElement("div");
-  searchBar.classList.add("search-bar");
-
-  const input = document.createElement("input");
-  input.setAttribute("type", "text");
-  input.setAttribute("id", "search-input");
-  input.setAttribute("placeholder", "Pesquisar por título");
-
-  const button = document.createElement("button");
-  button.textContent = "Pesquisar";
-  button.addEventListener("click", searchPosts);
-
-  searchBar.appendChild(input);
-  searchBar.appendChild(button);
-  searchBar.appendChild(postCount);
-
-  document.body.appendChild(searchBar);
+  const postCount = document.createElement("div");
+  postCount.setAttribute("id", "postCount");
 }
 
 // Função para pesquisar posts
 function searchPosts() {
-  const input = document.getElementById("search-input");
+  const input = document.getElementById("searchInput");
   const searchText = input.value.trim().toLowerCase();
 
   fetch("posts.json")
@@ -112,8 +97,9 @@ function searchPosts() {
       );
 
       // Atualiza a contagem de posts encontrados
-      const postCount = document.getElementById("post-count");
-      postCount.textContent = `${filteredPosts.length} posts encontrados`;
+      const postCount = document.getElementById("postCount");
+
+      postCount.innerHTML = `${filteredPosts.length} posts encontrados`;
 
       // Limpa a lista de posts antes de exibir os resultados da pesquisa
       const postList = document.getElementById("postList");
@@ -131,15 +117,9 @@ function searchPosts() {
         const postElement = document.createElement("li");
         postElement.innerHTML = `
             <h2>${post.title}</h2>
-            <p><strong>Autor:</strong> ${findUserNameById(
-              post.userId,
-              usersData
-            )}</p>
             <p><strong>Data de criação:</strong> ${formattedDate}</p>
             <p><strong>Likes:</strong> ${post.likes.length}</p>
-            <p><strong>Número de comentários:</strong> ${
-              post.comments.length
-            }</p>
+            <p><strong>Número de comentários:</strong> ${post.comments.length}</p>
             <hr>
           `;
         postList.appendChild(postElement);
@@ -194,7 +174,7 @@ function displayNewPost(post) {
       <p><strong>Número de comentários:</strong> ${post.comments.length}</p>
       <hr>
     `;
-  postList.appendChild(postElement);
+  postList.prepend(postElement);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
