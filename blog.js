@@ -25,7 +25,7 @@ function findUserNameById(userId, usersData) {
 // Função para encontrar a foto de perfil do usuário pelo ID
 function findUserProfilePicById(userId, usersData) {
   const user = usersData.find((user) => user.id === userId);
-  return user ? user.picture : "default.jpg"; // Coloque o link para uma imagem padrão caso não haja foto de perfil
+  return user ? user.picture : "default.jpg";
 }
 
 // Função para exibir os detalhes dos posts
@@ -157,7 +157,6 @@ function searchPosts() {
 function criarPost() {
   const postTitle = document.getElementById("postTitle").value;
   const postContent = document.getElementById("postContent").value;
-  const authorName = document.getElementById("authorName").value;
 
   const newPost = {
     title: postTitle,
@@ -169,11 +168,11 @@ function criarPost() {
   };
 
   // Exibir o novo post localmente
-  displayNewPost(newPost, authorName);
+  displayNewPost(newPost);
 }
 
 // Função para exibir o novo post localmente
-function displayNewPost(post, authorName) {
+function displayNewPost(post) {
   const postList = document.getElementById("postList");
   // Código para exibir o novo post (similar ao anterior)
 
@@ -189,7 +188,6 @@ function displayNewPost(post, authorName) {
   postElement.classList.add("post");
   postElement.innerHTML = `
       <h3>${post.title}</h3>
-      <p><strong>Autor:</strong> ${authorName}</p>
       <p><strong>Data de criação:</strong> ${formattedDate}</p>
       <p>${post.body}</p>
       <p><strong>Likes:</strong> ${post.likes.length}</p>

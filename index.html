@@ -15,10 +15,6 @@
       <br />
       <label for="postContent">Conteúdo:</label>
       <textarea id="postContent"></textarea>
-      <br />
-      <label for="authorName">Seu Nome:</label>
-      <input type="text" id="authorName" />
-      <br />
       <button onclick="criarPost()">Criar Post</button>
     </div>
 
@@ -29,9 +25,9 @@
           type="text"
           id="searchInput"
           placeholder="Pesquisar por título"
-          oninput="pesquisarPosts()"
+          oninput="searchPosts()"
         />
-        <button onclick="pesquisarPosts()">Pesquisar</button>
+        <button onclick="searchPosts()">Pesquisar</button>
       </div>
       <ul id="postList"></ul>
     </div>
