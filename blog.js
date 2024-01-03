@@ -1,4 +1,7 @@
 // Função para carregar os dados dos arquivos JSON
+
+let allPosts = []; // Array global para armazenar todos os posts
+
 function carregarDados() {
   // Carregar posts.json
   fetch("posts.json")
@@ -30,6 +33,7 @@ function findUserProfilePicById(userId, usersData) {
 
 // Função para exibir os detalhes dos posts
 function displayPostsDetails(postsData, usersData) {
+  allPosts = postsData;
   const postList = document.getElementById("postList");
 
   // Inverte a ordem dos posts (do mais recente para o mais antigo)
@@ -92,10 +96,9 @@ function searchPosts() {
   fetch("posts.json")
     .then((response) => response.json())
     .then((postsData) => {
-      const filteredPosts = postsData.filter((post) =>
+      const filteredPosts = allPosts.filter((post) =>
         post.title.toLowerCase().includes(searchText)
       );
-
       // Atualiza a contagem de posts encontrados
       const postCount = document.getElementById("postCount");
 
@@ -152,6 +155,7 @@ function criarPost() {
 }
 
 function displayNewPost(post) {
+  allPosts.unshift(post);
   const postList = document.getElementById("postList");
   // Código para exibir o novo post (similar ao anterior)
 
