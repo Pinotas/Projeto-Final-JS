@@ -151,7 +151,6 @@ function criarPost() {
   displayNewPost(newPost);
 }
 
-// Função para exibir o novo post localmente
 function displayNewPost(post) {
   const postList = document.getElementById("postList");
   // Código para exibir o novo post (similar ao anterior)
