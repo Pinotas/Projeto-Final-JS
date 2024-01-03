@@ -1,18 +1,24 @@
 // Função para carregar os dados dos arquivos JSON
 
-let allPosts = []; // Array global para armazenar todos os posts
+let allPosts = [];
+let allusersData = []; // Array global para armazenar todos os posts
 
 function carregarDados() {
   // Carregar posts.json
-  fetch("posts.json")
+  fetch(
+    "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json"
+  )
     .then((response) => response.json())
     .then((postsData) => {
       // Carregar users.json
-      fetch("users.json")
+      fetch(
+        "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/users.json"
+      )
         .then((response) => response.json())
         .then((usersData) => {
           // Exibir detalhes dos posts
           displayPostsDetails(postsData, usersData);
+          allusersData = usersData;
         })
         .catch((error) => console.error("Erro ao carregar users.json:", error));
     })
@@ -122,8 +128,29 @@ function searchPosts() {
             <h2>${post.title}</h2>
             <p><strong>Data de criação:</strong> ${formattedDate}</p>
             <p><strong>Likes:</strong> ${post.likes.length}</p>
-            <p><strong>Número de comentários:</strong> ${post.comments.length}</p>
+            <p><strong>Número de comentários:</strong> ${
+              post.comments.length
+            }</p>
+            <p><strong>Comentários:</strong></p>
+            <ul style="list-style: none; padding-left: 0;">
+              ${post.comments
+                .map(
+                  (comment) => `
+                    <li style="display: flex; align-items: center; margin-bottom: 10px;">
+                      <img src="${findUserProfilePicById(
+                        comment.userId,
+                        allusersData
+                      )}" alt="Foto de perfil" style="width: 50px; height: 50px; border-radius: 50%; margin-right: 10px;">
+                      <span>${findUserNameById(
+                        comment.userId,
+                        allusersData
+                      )}: ${comment.body}</span>
+                    </li>`
+                )
+                .join("")}
+            </ul>
             <hr>
+            
           `;
         postList.appendChild(postElement);
       });
