@@ -182,9 +182,3 @@ document.addEventListener("DOMContentLoaded", () => {
   criarBarraPesquisa();
   setupCriarPost(); // Configurar o evento para criar um novo post
 });
-
-// Função para configurar o evento de criar um novo post
-function setupCriarPost() {
-  const criarPostButton = document.querySelector("#postDetails button");
-  criarPostButton.addEventListener("click", criarPost);
-}
