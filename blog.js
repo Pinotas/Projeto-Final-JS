@@ -36,7 +36,7 @@ function displayPostsDetails(postsData, usersData) {
   postsData.reverse();
 
   postsData.forEach((post) => {
-    const formattedDate = new Date(post.createdAt).toLocaleString("pt-BR", {
+    const formattedDate = new Date(post.createdAt).toLocaleString("pt", {
       day: "2-digit",
       month: "2-digit",
       year: "numeric",
@@ -106,7 +106,7 @@ function searchPosts() {
       postList.innerHTML = "";
 
       filteredPosts.forEach((post) => {
-        const formattedDate = new Date(post.createdAt).toLocaleString("pt-BR", {
+        const formattedDate = new Date(post.createdAt).toLocaleString("pt", {
           day: "2-digit",
           month: "2-digit",
           year: "numeric",
@@ -179,5 +179,4 @@ function displayNewPost(post) {
 document.addEventListener("DOMContentLoaded", () => {
   carregarDados();
   criarBarraPesquisa();
-  setupCriarPost(); // Configurar o evento para criar um novo post
 });
