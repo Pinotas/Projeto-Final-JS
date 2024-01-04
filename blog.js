@@ -186,7 +186,7 @@ function displayNewPost(post) {
   const postList = document.getElementById("postList");
   // Código para exibir o novo post (similar ao anterior)
 
-  const formattedDate = new Date(post.createdAt).toLocaleString("pt-BR", {
+  const formattedDate = new Date(post.createdAt).toLocaleString("pt", {
     day: "2-digit",
     month: "2-digit",
     year: "numeric",
