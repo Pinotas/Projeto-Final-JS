@@ -98,8 +98,9 @@ function criarBarraPesquisa() {
 function searchPosts() {
   const input = document.getElementById("searchInput");
   const searchText = input.value.trim().toLowerCase();
-
-  fetch("posts.json")
+  fetch(
+    "https://jmrfrosa.github.io/edit-jsts-dec2023.github.io/data/posts.json"
+  )
     .then((response) => response.json())
     .then((postsData) => {
       const filteredPosts = allPosts.filter((post) =>
@@ -127,6 +128,7 @@ function searchPosts() {
         postElement.innerHTML = `
             <h2>${post.title}</h2>
             <p><strong>Data de criação:</strong> ${formattedDate}</p>
+            <p>${post.body}</p> <!-- Conteúdo do post -->
             <p><strong>Likes:</strong> ${post.likes.length}</p>
             <p><strong>Número de comentários:</strong> ${
               post.comments.length
